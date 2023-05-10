@@ -1,0 +1,61 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.oukq.cocktailhelper</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>CocktailHelper</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="ououquan@126.com" url="">Oukq</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    开发辅助工具, cocktail helper bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Cocktail Helper" secondary="true" icon="com.oukq.cocktailhelper.MyIcons.cocktail" anchor="right"
+                    factoryClass="com.oukq.cocktailhelper.toolwindow.AqmToolWindowFactory"/>
+
+        <localInspection language="JAVA"
+                         bundle="messages.InspectionBundle"
+                         key="inspection.server.submit.user.thread.display.name"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionBundle"
+                         groupKey="group.names.code.standard"
+                         enabledByDefault="true"
+                         level="ERROR"
+                         implementationClass="com.oukq.cocktailhelper.inspection.SubmitUserThreadInspection"/>
+
+        <localInspection language="JAVA"
+                         bundle="messages.InspectionBundle"
+                         key="inspection.server.msschedules.display.name"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionBundle"
+                         groupKey="group.names.code.standard"
+                         enabledByDefault="true"
+                         level="ERROR"
+                         implementationClass="com.oukq.cocktailhelper.inspection.MsScheduledExecutorServiceInspection"/>
+        <localInspection language="JAVA"
+                         bundle="messages.InspectionBundle"
+                         key="inspection.common.cachedata.display.name"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionBundle"
+                         groupKey="group.names.code.standard"
+                         enabledByDefault="true"
+                         level="ERROR"
+                         implementationClass="com.oukq.cocktailhelper.inspection.CacheDataConstructorInspection"/>
+    </extensions>
+</idea-plugin>

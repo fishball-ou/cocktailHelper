@@ -1,0 +1,10 @@
+<html>
+<body>
+引擎提供的线程池请使用有DistrubuteKey的方法
+<p>
+    因为引擎如果不提供DisributeKey的方法会放入同一条线程,容易导致堵塞的问题,请不要直接使用没有DisributeKey的方法
+    MsScheduledExecutorService.execute(Runnable command) ×
+    MsScheduledExecutorService.execute(long distributeKey, Runnable command) √
+</p>
+</body>
+</html>
