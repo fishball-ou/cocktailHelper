@@ -14,7 +14,10 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    开发辅助工具, cocktail helper bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla
+    开发辅助工具, cocktail helper
+    1. generate create table sql from the dto class, add comment if change some create table sql settings
+    2. insert code into some key definition class
+    3. import bt code style scheme
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.

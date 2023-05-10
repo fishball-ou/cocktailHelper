@@ -24,17 +24,12 @@ import java.util.List;
 
 public class AqmToolWindowFactory implements ToolWindowFactory, DumbAware {
 
-	private AqmToolWindowContent instance;
-
 	@Override
 	public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-		if (instance == null) {
-			AqmToolWindowContent toolWindowContent = new AqmToolWindowContent(toolWindow);
-			Content content = ContentFactory.getInstance()
-					.createContent(toolWindowContent.getContentPanel(), "", false);
-			toolWindow.getContentManager().addContent(content);
-			instance = toolWindowContent;
-		}
+		AqmToolWindowContent toolWindowContent = new AqmToolWindowContent(toolWindow);
+		Content content = ContentFactory.getInstance()
+				.createContent(toolWindowContent.getContentPanel(), "", false);
+		toolWindow.getContentManager().addContent(content);
 	}
 
 	private static class AqmToolWindowContent implements Disposable {

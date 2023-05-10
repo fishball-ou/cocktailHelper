@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.oukq"
-version = "1.1-SNAPSHOT"
+version = "1.2"
 
 repositories {
     mavenCentral()
