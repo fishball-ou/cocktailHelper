@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.oukq"
-version = "1.2"
+version = "1.2.1"
 
 repositories {
     mavenCentral()
@@ -21,6 +21,11 @@ intellij {
 }
 
 tasks {
+    runIde {
+        autoReloadPlugins.set(true)
+    }
+}
+tasks {
     // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = "11"
@@ -32,7 +37,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("222")
-        untilBuild.set("232.*")
+        untilBuild.set("231.*")
     }
 
     signPlugin {
